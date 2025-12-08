@@ -30,7 +30,7 @@ const paramsToString = (params: ReadonlyArray<string>) =>
 export const useFetchUsers = () =>
     useQuery<IUsersResponse>("users", () =>
         fetch(
-            `https://t6jhp0e39a.execute-api.eu-west-1.amazonaws.com/default/elo/getUsers${paramsToString(
+            `https://wj1s4msfhe.execute-api.eu-west-1.amazonaws.com/default/elo/getUsers${paramsToString(
                 requestParams
             )}`
         ).then((res) => res.json())
@@ -47,7 +47,7 @@ export const useFetchGames = (id?: string) => {
 
     return useQuery<IGamesResponse>(queryKey, () =>
         fetch(
-            `https://t6jhp0e39a.execute-api.eu-west-1.amazonaws.com/default/elo/retrieveGames${paramsToString(
+            `https://wj1s4msfhe.execute-api.eu-west-1.amazonaws.com/default/elo/retrieveGames${paramsToString(
                 params
             )}`
         ).then((res) => res.json())
@@ -57,7 +57,7 @@ export const useFetchGames = (id?: string) => {
 export const useFetchAllStats = () =>
     useQuery<AllStatsResponse>("allStats", () =>
         fetch(
-            `https://t6jhp0e39a.execute-api.eu-west-1.amazonaws.com/default/elo/retrieveAllStats${paramsToString(
+            `https://wj1s4msfhe.execute-api.eu-west-1.amazonaws.com/default/elo/retrieveAllStats${paramsToString(
                 requestParams
             )}`
         ).then((res) => res.json())
@@ -74,7 +74,7 @@ export const useRegisterUser = (
     useMutation<IUsersResponse, string, IUserRequest>(
         (user) =>
             fetch(
-                `https://t6jhp0e39a.execute-api.eu-west-1.amazonaws.com/default/elo/registerUser${paramsToString(
+                `https://wj1s4msfhe.execute-api.eu-west-1.amazonaws.com/default/elo/registerUser${paramsToString(
                     requestParams
                 )}`,
                 {
@@ -108,7 +108,7 @@ export const useSubmitResult = (
     useMutation<IUpdateResponse, string, ReadonlyArray<IGameRequest>>(
         (games) => {
             return fetch(
-                `https://t6jhp0e39a.execute-api.eu-west-1.amazonaws.com/default/elo/updateElo${paramsToString(
+                `https://wj1s4msfhe.execute-api.eu-west-1.amazonaws.com/default/elo/updateElo${paramsToString(
                     requestParams
                 )}`,
                 {
